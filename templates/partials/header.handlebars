@@ -1,3 +1,13 @@
-<div id="header">
-  {{header.title}}
-</div>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">{{header.title}}</a>
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      {{#each header.links}}
+      <li class="nav-item">
+        <a class="nav-link" href="#">{{name}}</a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</nav>

@@ -1,11 +1,16 @@
 const context = {
   header: {
-    title: "Handlebars Sandbox"
+    title: "Handlebars Sandbox",
+    links: [
+      { name: "Home" },
+      { name: "About" },
+      { name: "Contact" }
+    ]
   },
   main: {
-    body: "Lorem ipsum"
+    body: "Hello world"
   },
   footer: {
-    text: "Copyright 2018"
+    text: "This is the footer"
   }
 };
