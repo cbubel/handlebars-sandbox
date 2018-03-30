@@ -3,12 +3,14 @@
 </div>
 
 <div id="main" class="container">
-  {{#if page.isAbout}}
+  {{#if page.isHome}}
+    {{> partials/home}}
+  {{else if page.isAbout}}
     {{> partials/about}}
   {{else if page.isContact}}
     {{> partials/contact}}
   {{else}}
-    {{> partials/home}}
+    {{> partials/notFound}}
   {{/if}}
 </div>
 
