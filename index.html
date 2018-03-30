@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Handlebars Sandbox</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- Handlebars runtime -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.min.js"></script>
+
+  <!-- Must be loaded after Handlebars runtime -->
+  <script src="./dist/templates.js"></script>
+
+  <!-- Variables for our templates -->
+  <script src="./js/context.js"></script>
+
+  <!-- Attach template to root -->
+  <script>
+    // This line must come after we load templates.js
+    Handlebars.partials = Handlebars.templates;
+
+    // Attach the template
+    const root = document.getElementById("root");
+    root.innerHTML = Handlebars.templates.index(context);
+  </script>
+</body>
+
+</html>
