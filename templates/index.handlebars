@@ -1,1 +1,17 @@
-{{> partials/header}} {{> partials/main}} {{> partials/footer}}
+<div>
+  {{> partials/header}}
+</div>
+
+<div id="main" class="container">
+  {{#if page.isAbout}}
+    {{> partials/about}}
+  {{else if page.isContact}}
+    {{> partials/contact}}
+  {{else}}
+    {{> partials/home}}
+  {{/if}}
+</div>
+
+<div>
+  {{> partials/footer}}
+</div>

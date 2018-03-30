@@ -25,12 +25,20 @@
 
   <!-- Attach template to root -->
   <script>
+    // Set initial hash
+    setPage(window.location.hash);
+
     // This line must come after we load templates.js
     Handlebars.partials = Handlebars.templates;
 
     // Attach the template
     const root = document.getElementById("root");
     root.innerHTML = Handlebars.templates.index(context);
+
+    window.onhashchange = e => {
+      setPage(this.location.hash);
+      root.innerHTML = Handlebars.templates.index(context);
+    };
   </script>
 </body>
 
