@@ -17,6 +17,13 @@
   <!-- Handlebars runtime -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.min.js"></script>
 
+  <script>
+    Handlebars.registerHelper({
+      eq: (v1, v2) => v1 === v2,
+      or: (v1, v2) => v1 || v2
+    });
+  </script>
+
   <!-- Must be loaded after Handlebars runtime -->
   <script src="./dist/templates.js"></script>
 

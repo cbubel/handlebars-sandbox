@@ -1,11 +1,5 @@
-let hash = "";
-
 const context = {
-  page: {
-    isHome: false,
-    isAbout: false,
-    isContact: false
-  },
+  page: "",
   header: {
     title: "Handlebars Sandbox",
     links: [
@@ -23,9 +17,5 @@ const context = {
 };
 
 function setPage(hash) {
-  hash = hash;
-
-  context.page.isHome = hash === "" || hash === "#";
-  context.page.isAbout = hash === "#about";
-  context.page.isContact = hash === "#contact";
+  context.page = hash;
 }

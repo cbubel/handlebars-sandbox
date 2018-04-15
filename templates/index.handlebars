@@ -1,11 +1,11 @@
 {{> partials/header}}
 
 <div id="main" class="container">
-  {{#if page.isHome}}
+  {{#if (or (eq page "#") (eq page ""))}}
     {{> partials/home}}
-  {{else if page.isAbout}}
+  {{else if (eq page "#about")}}
     {{> partials/about}}
-  {{else if page.isContact}}
+  {{else if (eq page "#contact")}}
     {{> partials/contact}}
   {{else}}
     {{> partials/notFound}}
