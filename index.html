@@ -12,11 +12,13 @@
 </head>
 
 <body>
+  <!-- Attach the content here -->
   <div id="root"></div>
 
   <!-- Handlebars runtime -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.min.js"></script>
 
+  <!-- Custom Handlebars helpers -->
   <script>
     Handlebars.registerHelper({
       eq: (v1, v2) => v1 === v2,
@@ -32,20 +34,26 @@
 
   <!-- Attach template to root -->
   <script>
-    // Set initial hash
-    setPage(window.location.hash);
+    // Content will be attached to this node
+    const root = document.getElementById("root");
 
     // This line must come after we load templates.js
     Handlebars.partials = Handlebars.templates;
 
     // Attach the template
-    const root = document.getElementById("root");
     root.innerHTML = Handlebars.templates.index(context);
 
-    window.onhashchange = e => {
-      setPage(this.location.hash);
+    // Set initial hash and listen for changes
+    handlePageSet();
+    window.onhashchange = handlePageSet;
+
+    function handlePageSet() {
+      // Sets the page in the context object
+      setPage(window.location.hash);
+
+      // Sets the new root content
       root.innerHTML = Handlebars.templates.index(context);
-    };
+    }
   </script>
 </body>
 
