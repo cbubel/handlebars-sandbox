@@ -7,12 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Handlebars Sandbox</title>
 
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <!-- Custom styles -->
   <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
-  <!-- Attach the content here -->
+  <!-- Root element in which content will be placed -->
   <div id="root"></div>
 
   <!-- Handlebars runtime -->
@@ -64,7 +67,7 @@
       // Sets the page in the context object
       context.page = window.location.hash;
 
-      // Sets the new root content
+      // Sets the new root content by producing the index template with context
       root.innerHTML = Handlebars.templates.index(context);
     }
   </script>
