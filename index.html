@@ -40,9 +40,6 @@
     // This line must come after we load templates.js
     Handlebars.partials = Handlebars.templates;
 
-    // Attach the template
-    root.innerHTML = Handlebars.templates.index(context);
-
     // Set initial hash and listen for changes
     handlePageSet();
     window.onhashchange = handlePageSet;
