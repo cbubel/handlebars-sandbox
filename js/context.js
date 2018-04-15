@@ -15,7 +15,3 @@ const context = {
     text: "This is the footer"
   }
 };
-
-function setPage(hash) {
-  context.page = hash;
-}

@@ -46,7 +46,7 @@
 
     function handlePageSet() {
       // Sets the page in the context object
-      setPage(window.location.hash);
+      context.page = window.location.hash;
 
       // Sets the new root content
       root.innerHTML = Handlebars.templates.index(context);
