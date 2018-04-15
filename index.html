@@ -18,7 +18,7 @@
   <!-- Handlebars runtime -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.min.js"></script>
 
-  <!-- Custom Handlebars helpers -->
+  <!-- Custom Handlebars helpers which must come before templates are loaded -->
   <script>
     Handlebars.registerHelper({
       eq: (v1, v2) => v1 === v2,
@@ -29,11 +29,27 @@
   <!-- Must be loaded after Handlebars runtime -->
   <script src="./dist/templates.js"></script>
 
-  <!-- Variables for our templates -->
-  <script src="./js/context.js"></script>
-
   <!-- Attach template to root -->
   <script>
+    // App context for templates
+    const context = {
+      page: "",
+      header: {
+        title: "Handlebars Sandbox",
+        links: [
+          { name: "Home", url: "#" },
+          { name: "About", url: "#about" },
+          { name: "Contact", url: "#contact" }
+        ]
+      },
+      main: {
+        body: "Hello world"
+      },
+      footer: {
+        text: "This is the footer"
+      }
+    };
+
     // Content will be attached to this node
     const root = document.getElementById("root");
 
